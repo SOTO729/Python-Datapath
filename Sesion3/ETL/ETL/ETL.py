@@ -2,6 +2,10 @@ import pandas as pd
 import sqlalchemy as db
 from sqlalchemy import text
 import pandas as pd
+import json
+with open('config.json') as file:
+    config = json.load(file)
+print(config)
 engine = db.create_engine("mysql://root:root@10.0.0.207:3310/db_movies_netflix_transact")
 conn = engine.connect()
 query = """
